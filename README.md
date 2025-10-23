@@ -30,7 +30,49 @@ cd \path\to\where\you\want\the\repo
 git clone https://example.com/your-repo.git
 cd your-repo
 ```
+---
 
+## 3) Add an .env file in your project repo (see example below)
+```
+USE_GRAPH=false
+MOCK_LLM=true
+DRY_RUN=true
+MOCK_EMAIL=true       
+EMAIL_DIR_DEFAULT=data/email_memory
+INBOX_TODAY_DIR=data/inbox_today
+LOG_DIR=logs
+SUMMARY_TITLE=Daily SMS Price Changes 
+DEBUG_TABLES=true  
+
+
+# Microsoft Graph (Application permissions)
+MS_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+MS_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+MS_CLIENT_SECRET="your_client_secret_value"
+MS_SHARED_MAILBOX=shared_mailbox@yourdomain.com
+MS_MAIL_FOLDER=Inbox
+MS_DAYS_BACK=1
+MS_TOP=100
+
+
+# Gemini (for LLM-extraktion)
+ 
+GOOGLE_API_KEY=
+
+
+# GOOGLE_CLOUD_PROJECT=
+# GOOGLE_CLOUD_LOCATION=
+
+
+# SMTP för utskick
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=you@yourdomain.com
+SMTP_PASSWORD="app_or_smtp_password"
+SMTP_FROM=you@yourdomain.com
+SMTP_TO=team@yourdomain.com
+SMTP_STARTTLS=true
+```
 ---
 
 ## 3) Create and activate an environment
@@ -241,4 +283,5 @@ gsutil mb -l %REGION% gs://YOUR-STAGING-BUCKET
 ---
 
 **You’re set.** Run locally with your active env, enhance to add production scaffolding, then deploy to Agent Engine with `make backend`. Iterate and redeploy as needed.
+
 

@@ -6,7 +6,7 @@ The "Messenger-price-analyzer" is the project what it looks like before applying
 
 # Installation & Deployment Guide
 
-This guide walks you from a fresh clone to a working local run and a deployment to **Vertex AI Agent Engine**, using the **Agent Starter Pack** on Windows (Anaconda Prompt). A `venv` alternative is also included.
+This guide walks you from a fresh clone to a working local run and a deployment to **Vertex AI Agent Engine**, using the **Agent Starter Pack** on Windows (Anaconda Prompt).
 
 ---
 
@@ -19,8 +19,6 @@ This guide walks you from a fresh clone to a working local run and a deployment 
 - Google Cloud SDK (`gcloud`) and `gsutil` (for deployment)
 - A Google Cloud project with billing enabled
 - Mock data (a couple of .emls for testing)
-
-> Tip: Keep a terminal open with your active environment so installs and runs go into the same place.
 
 ---
 
@@ -77,21 +75,12 @@ SMTP_STARTTLS=true
 
 ## 3) Create and activate an environment
 
-### Option A — **conda** (recommended with Anaconda)
-```bat
-conda create -n sms-agent python=3.11 -y
-conda activate sms-agent
-python -m pip install --upgrade pip
-```
-
-### Option B — **venv** (works inside Anaconda Prompt)
+### **venv** 
 ```bat
 python -m venv .venv
 .\.venv\Scripts\activate
 python -m pip install --upgrade pip
 ```
-
-> You should see `(sms-agent)` or `(.venv)` at the beginning of your prompt before installs/runs.
 
 ---
 
@@ -253,35 +242,13 @@ gcloud config set project YOUR_DEV_PROJECT_ID
 ---
 
 
-## 14) Quick command reference
-```bat
-:: env
-conda create -n sms-agent python=3.11 -y
-conda activate sms-agent
-
-:: install project deps
-pip install -r requirements.txt
-
-:: install starter pack CLI
-pip install --upgrade agent-starter-pack
-
-:: enhance (interactive)
-agent-starter-pack enhance
-
-:: optional: make targets added by enhance
-make install
-make playground
-make backend
-
-:: GCP basics
-gcloud auth application-default login
-gcloud config set project YOUR_DEV_PROJECT_ID
-set REGION=us-central1
-gsutil mb -l %REGION% gs://YOUR-STAGING-BUCKET
+## 14) Register and create agent in AgentSpace (Gemini Enterprise)
+```
+- In Google Cloud Console → **Gemini Enterprise → Configuration → Assistant → Agent → Add item**
+- Select Vertex AI/Agent Engine option (If this does not exist you'll need to use A2A)
+- Add project relevant variables (Resource engine ID, project ID etc)
 ```
 
 ---
-
-**You’re set.** Run locally with your active env, enhance to add production scaffolding, then deploy to Agent Engine with `make backend`. Iterate and redeploy as needed.
 
 

@@ -74,7 +74,7 @@ class AgentEngineApp(AdkApp):
 @click.command()
 @click.option(
     "--project",
-    default=None,
+    default="aicoe-prod-agentspace",
     help="GCP project ID (defaults to application default credentials)",
 )
 @click.option(

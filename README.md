@@ -1,6 +1,6 @@
 # Repo structure
 
-This repo contains two projects, one Messenger-price-analyzer and one Messenger-price-analyzer-ASP. The ASP is a prepared, ready and deployed ADK agent to Vertex AI.
+This repo contains two projects, one Messenger-price-analyzer and one Messenger-price-analyzer-ASP. The ASP is a prepared, ready and deployed ADK agent to Vertex AI. This version is currently under development and is the version that I am right now continuously iterating on. 
 The "Messenger-price-analyzer" is the project what it looks like before applying the Agent Starter Pack enhancement. Below you will find a installation and deployment guide for the clean Messenger-price-analyzer project.
 
 

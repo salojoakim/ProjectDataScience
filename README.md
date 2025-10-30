@@ -243,11 +243,11 @@ gcloud config set project YOUR_DEV_PROJECT_ID
 
 
 ## 14) Register and create agent in AgentSpace (Gemini Enterprise)
-```
+
 - In Google Cloud Console → **Gemini Enterprise → Configuration → Assistant → Agent → Add item**
 - Select Vertex AI/Agent Engine option (If this does not exist you'll need to use A2A)
 - Add project relevant variables (Resource engine ID, project ID etc)
-```
+
 
 ---
 
